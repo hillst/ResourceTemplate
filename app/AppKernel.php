@@ -19,11 +19,10 @@ class AppKernel extends Kernel
             new HillCMS\UserBundle\HillCMSUserBundle(),
             new HillCMS\SecurityBundle\HillCMSSecurityBundle(),
             new HillCMS\ManageBundle\HillCMSManageBundle(),
-            new HillCMS\SpirodelaBundle\HillCMSSpirodelaBundle(),
+            new HillCMS\ResourceBundle\HillCMSResourceBundle(),
 	);
 
         if (in_array($this->getEnvironment(), array('dev', 'test'))) {
-            $bundles[] = new Acme\DemoBundle\AcmeDemoBundle();
             $bundles[] = new Symfony\Bundle\WebProfilerBundle\WebProfilerBundle();
             $bundles[] = new Sensio\Bundle\DistributionBundle\SensioDistributionBundle();
             $bundles[] = new Sensio\Bundle\GeneratorBundle\SensioGeneratorBundle();

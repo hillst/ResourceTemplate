@@ -11,11 +11,20 @@ Important path:
 */app_dev.php/home		Page that uses two different heading prefixes to organize pagethings.
 
 #Configuring a fresh website#
-First you will need to register a new bundle. When that is done, you must remove the registered CCBL bundle.
-You must remove CCBL from the app/config/routing.yml file as well.
+The first thing you must do is change all the instances of the word Resource to the actual name of your resource. The files which must be edited or changed to match this naming pattern:
+ResourceBundle
+All views
+All controllers
+app/AppKernel.php
+ResourceBundle/Resource/config/routing.yml
+src/HillCMS/ResourceBundle/HillCMSResourceBundle.php
+
+Secondly you will need to configure a parameters.yml in the app settings. None exists in the repo, this is so your database information is not public! Copy #parameters.yml# and change the database settings to match your own. You may then import the table structure of resource.sql into your database. Read the content management section for more information on the database management.
+
+Finally you should customize the CSS to your liking. All app resources are in web/includes, the app css file is custom.css
 
 #Purpose#
-The goal of this app is to create some middle ground for a CMS and a framework. This is primarly designed for developers, with the ability to allow user end text and selective feature editing. All styling should be done through straight CSS and HTML using the underlying symfony framework.
+The purpose of this repo is to quickly create new resource pages (spirodela, setaria etc). They will all have a similar layout and color scheme, mostly because of bootstrap, but also for ease of configuration.
 
 #Content Management#
 The way the Content Management System works is simple. Pages contain things. Things can be images, text blocks, names, whatever needs to be edited. Additionally, things can be grouped together by being a part of a "group."
